@@ -1,0 +1,149 @@
+const {
+    calculateBMI,
+    recommendWorkout,
+    weightStatus,
+    reciept
+
+} = require("./healthApp")
+
+
+
+describe("BMI", () => {
+    it("should return a number", () => {
+        let actual = typeof calculateBMI(1.524, 54.431)
+        let expected = 'number'
+        expect(actual).toBe(expected)
+    })
+
+    it("should calculate BMI using height and weight", () => {
+        let actual = calculateBMI(1.524, 54.431)
+        let expected = 23.4
+        expect(actual).toBe(expected)
+
+        actual = calculateBMI(1.828, 54.431)
+        expected = 16.3
+        expect(actual).toBe(expected)
+
+        actual = calculateBMI(1.219, 54.431)
+        expected = 36.6
+        expect(actual).toBe(expected)
+    })
+
+    it("should return an error if no height or weight is inputted", () => {
+        let actual = calculateBMI(1.4)
+        let expected = "No weight inputted"
+        expect(actual).toBe(expected)
+        
+        actual = calculateBMI(null, 1.4)
+        expected = "No height inputted"
+        expect(actual).toBe(expected)
+        
+        actual = calculateBMI(1.4, null)
+        expected = "No weight inputted"
+        expect(actual).toBe(expected)
+    })
+    
+})
+
+describe("Workout", () => {
+    it("shoud return a error message", () => {
+        let actual = recommendWorkout()
+        let expected = "No BMI found"
+        expect(actual).toBe(expected)
+    })
+    
+    it("shoud return a error message", () => {
+        let actual = recommendWorkout('error')
+        let expected = "Invalid input"
+        expect(actual).toBe(expected)
+    })
+
+
+    it("should give user different workout recommendations depending on the given BMI ", () => {
+        let actual = recommendWorkout(23.4)
+        let expected = "Workout 2 days a week"
+        expect(actual).toBe(expected)
+
+
+        actual = recommendWorkout(18.5)
+        expected = "Needs more calories"
+        expect(actual).toBe(expected)
+
+        actual = recommendWorkout(16.3)
+        expected = "Needs to eat 3 full meals a day"
+        expect(actual).toBe(expected)
+
+        actual = recommendWorkout(36.6)
+        expected = "Workout 5 days a week"
+        expect(actual).toBe(expected)
+    })
+})
+
+describe("Weight Status", () => {
+    it("shoud return a error message", () => {
+        let actual = recommendWorkout()
+        let expected = "No BMI found"
+        expect(actual).toBe(expected)
+    })
+
+    it("should return message telling the user their weight status", () => {
+        let actual = weightStatus(23.4)
+        let expected = "Normal"
+        expect(actual).toBe(expected)
+
+        actual = weightStatus(16.3)
+        expected = "UnderWeight"
+        expect(actual).toBe(expected)
+
+        actual = weightStatus(36.6)
+        expected = "Obese"
+        expect(actual).toBe(expected)
+        
+        actual = weightStatus(26.5)
+        expected = "OverWeight"
+        expect(actual).toBe(expected)
+
+    })
+    
+    it("should return message telling the users with 'activity level key' their adjusted weight status", () => {
+        let actual = weightStatus(18.5, "high")
+        let expected = "Normal"
+        expect(actual).toBe(expected)
+        
+        actual = weightStatus(18.5, "extreme")
+        expected = "Underweight"
+        expect(actual).toBe(expected)
+        
+        actual = weightStatus(22.3, "high")
+        expected = "Normal"
+        expect(actual).toBe(expected)
+        
+        actual = weightStatus(26.8, "high")
+        expected = "Normal"
+        expect(actual).toBe(expected)
+        
+        actual = weightStatus(26.8, "high")
+        expected = "Normal"
+        expect(actual).toBe(expected)
+        
+        actual = weightStatus(36, "high")
+        expected = "Overweight"
+        expect(actual).toBe(expected)
+
+    })
+})
+
+describe("Reciept", () => {
+    it("should return a object with users BMI, weight status and workout recommendation", () => {
+        let actual = reciept(1.524, 54.431, "high")
+        let expected = {
+            height: "5 feet",
+            weight: "120 pounds",
+            activityLevel: "high",
+            weightStatus: "Normal",
+            workOut: "Workout 2 days a week"
+
+        }
+        expect(actual).toBe(expected)
+    })
+})

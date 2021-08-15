@@ -1,0 +1,16 @@
+{
+  "name": "health-app01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "healthApp.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch-all"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^27.0.6"
+  }
+}
