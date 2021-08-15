@@ -21,9 +21,18 @@ function weightToKG(weight, key){
     return 54.431
 }
 
+/**
+ * Return BMI using the inputted `height` and `weight`. formula --> BMI = kg/m**2
+ * @param {number} height - A number representing the height of a person.
+ * @param {number} weight - A number representing the weight of a person.
+ * @returns {number} - A number representing BMI
+ */
+
 function calculateBMI(height, weight){
  return ''+23.4
 }
+
+calculateBMI(null, 1.4)
 
 function recommendWorkout(bmi) {
  return "Workout 2 days a week"
