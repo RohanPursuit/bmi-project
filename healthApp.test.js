@@ -3,7 +3,7 @@ const {
     recommendWorkout,
     weightStatus,
     healthInfo,
-    heightToMeters,
+    toMeters,
     weightToKG
 
 } = require("./healthApp")
@@ -11,21 +11,21 @@ const {
 
 describe("Feet to meters", () => {
     it("should return error if no number inputted", () => {
-        let actual = heightToMeters()
+        let actual = toMeters()
         let expected = 0
         expect(actual).toBe(expected)
     })
 
     it("should convert Feet to meters", () => {
-        let actual = heightToMeters(5)
+        let actual = toMeters(5)
         let expected = 1.524
         expect(actual).toBe(expected)
 
-        actual = heightToMeters(6)
+        actual = toMeters(6)
         expected = 1.829
         expect(actual).toBe(expected)
         
-        actual = heightToMeters(7)
+        actual = toMeters(7)
         expected = 2.134
         expect(actual).toBe(expected)
     })
@@ -33,29 +33,29 @@ describe("Feet to meters", () => {
 
 describe("Inches/cm to meters", () => {
     it("should convert the given 'key' to meters", () => {
-        let actual = heightToMeters(60, "in")
+        let actual = toMeters(60, "in")
         let expected = 1.524
         expect(actual).toBe(expected)
 
-        actual = heightToMeters(72, "in")
+        actual = toMeters(72, "in")
         expected = 1.829
         expect(actual).toBe(expected)
 
-        actual = heightToMeters(84, "in")
+        actual = toMeters(84, "in")
         expected = 2.134
         expect(actual).toBe(expected)
     })
 
     it("should convert the given 'key' to meters", () => {
-        let actual = heightToMeters(152.4, "cm")
+        let actual = toMeters(152.4, "cm")
         let expected = 1.524
         expect(actual).toBe(expected)
 
-        actual = heightToMeters(182.88, "cm")
+        actual = toMeters(182.88, "cm")
         expected = 1.829
         expect(actual).toBe(expected)
 
-        actual = heightToMeters(213.36, "cm")
+        actual = toMeters(213.36, "cm")
         expected = 2.134
         expect(actual).toBe(expected)
     })

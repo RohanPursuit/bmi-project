@@ -6,15 +6,15 @@
  */
 
 
-function heightToMeters(height, key){
+function toMeters(height, key){
     return 1.524
 }
 
 /**
- * 
- * @param {*} weight 
- * @param {*} key 
- * @returns 
+ * Returns the given `weight` in kilograms. If no `key` is given return the value passed into `weight`. If a `key` is given convert the `weight` from the given `key` to kilograms.
+ * @param {number} weight - A number representing the weight of a person.
+ * @param {string} key - A string representing a unit of measurement 
+ * @returns {number} - A number representing weight in kilograms
  */
 
 function weightToKG(weight, key){
@@ -43,6 +43,6 @@ module.exports = {
     recommendWorkout,
     weightStatus,
     healthInfo,
-    heightToMeters,
+    toMeters,
     weightToKG
 }
