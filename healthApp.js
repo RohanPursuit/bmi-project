@@ -29,7 +29,8 @@ function weightToKG(weight, key){
  */
 
 function calculateBMI(height, weight){
- return ''+23.41
+    if (!height || !weight){return !height ? "No height inputted" : "No weight inputted"}
+ return 1*(weight/height**2).toFixed(1)
 }
 
 calculateBMI(null, 1.4)
