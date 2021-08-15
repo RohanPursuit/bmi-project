@@ -29,7 +29,9 @@ describe("Feet to meters", () => {
         expected = 2.133
         expect(actual).toBe(expected)
     })
+})
 
+describe("Inches/cm to meters", () => {
     it("should convert the given 'key' to meters", () => {
         let actual = heightToMeters(60, "in")
         let expected = 1.524
@@ -55,6 +57,28 @@ describe("Feet to meters", () => {
 
         actual = heightToMeters(213.36, "cm")
         expected = 2.133
+        expect(actual).toBe(expected)
+    })
+})
+
+describe("Pounds to Kg", () => {
+    it("should return error if no number inputted", () => {
+        let actual = weightToKG()
+        let expected = 0
+        expect(actual).toBe(expected)
+    })
+
+    it("should convert pounds to kg", () => {
+        let actual = weightToKG(100)
+        let expected = 45.359
+        expect(actual).toBe(expected)
+        
+        actual = weightToKG(150)
+        expected = 68.039
+        expect(actual).toBe(expected)
+        
+        actual = weightToKG(200)
+        expected = 90.719
         expect(actual).toBe(expected)
     })
 })
@@ -184,7 +208,7 @@ describe("Weight Status", () => {
     })
 })
 
-describe("Reciept", () => {
+describe("Personal Status", () => {
     it("should return a object with users BMI, weight status and workout recommendation", () => {
         let actual = reciept(1.524, 54.431, "high")
         let expected = {
