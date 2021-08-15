@@ -21,8 +21,11 @@ describe("Feet to meters", () => {
         let expected = 1.524
         expect(actual).toBe(expected)
 
-        actual = toMeters(6)
-        expected = 1.829
+    })
+
+    it("should dynamically convert Feet to meters", () => {
+        let actual = toMeters(6)
+        let expected = 1.829
         expect(actual).toBe(expected)
         
         actual = toMeters(7)
@@ -32,24 +35,28 @@ describe("Feet to meters", () => {
 })
 
 describe("Inches/cm to meters", () => {
-    it("should convert the given 'key' to meters", () => {
+    it("should convert the given 'in' to meters", () => {
         let actual = toMeters(60, "in")
         let expected = 1.524
         expect(actual).toBe(expected)
 
-        actual = toMeters(72, "in")
-        expected = 1.829
+    })
+
+    it("should convert the given 'cm' to meters", () => {
+        let actual = toMeters(152.4, "cm")
+        let expected = 1.524
+        expect(actual).toBe(expected)
+       
+    })
+
+    it("should dynamically convert the given 'key' to meters", () => {
+        let actual = toMeters(72, "in")
+        let expected = 1.829
         expect(actual).toBe(expected)
 
         actual = toMeters(84, "in")
         expected = 2.134
-        expect(actual).toBe(expected)
-    })
-
-    it("should convert the given 'key' to meters", () => {
-        let actual = toMeters(152.4, "cm")
-        let expected = 1.524
-        expect(actual).toBe(expected)
+        expect(actual).toBe(expected) 
 
         actual = toMeters(182.88, "cm")
         expected = 1.829
