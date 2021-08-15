@@ -35,7 +35,7 @@ function calculateBMI(height, weight){
 calculateBMI(null, 1.4)
 
 function recommendWorkout(bmi) {
- return "Workout 2 days a week"
+ return `Workout 2 days a week`
 }
 
 function weightStatus(bmi, activity){
