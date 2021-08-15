@@ -2,11 +2,62 @@ const {
     calculateBMI,
     recommendWorkout,
     weightStatus,
-    reciept
+    reciept,
+    heightToMeters,
+    weightToKG
 
 } = require("./healthApp")
 
 
+describe("Feet to meters", () => {
+    it("should return error if no number inputted", () => {
+        let actual = heightToMeters()
+        let expected = 0
+        expect(actual).toBe(expected)
+    })
+
+    it("should convert Feet to meters", () => {
+        let actual = heightToMeters(5)
+        let expected = 1.524
+        expect(actual).toBe(expected)
+
+        actual = heightToMeters(6)
+        expected = 1.828
+        expect(actual).toBe(expected)
+        
+        actual = heightToMeters(7)
+        expected = 2.133
+        expect(actual).toBe(expected)
+    })
+
+    it("should convert the given 'key' to meters", () => {
+        let actual = heightToMeters(60, "in")
+        let expected = 1.524
+        expect(actual).toBe(expected)
+
+        actual = heightToMeters(72, "in")
+        expected = 1.828
+        expect(actual).toBe(expected)
+
+        actual = heightToMeters(84, "in")
+        expected = 2.133
+        expect(actual).toBe(expected)
+    })
+
+    it("should convert the given 'key' to meters", () => {
+        let actual = heightToMeters(152.4, "cm")
+        let expected = 1.524
+        expect(actual).toBe(expected)
+
+        actual = heightToMeters(182.88, "cm")
+        expected = 1.828
+        expect(actual).toBe(expected)
+
+        actual = heightToMeters(213.36, "cm")
+        expected = 2.133
+        expect(actual).toBe(expected)
+    })
+})
 
 describe("BMI", () => {
     it("should return a number", () => {

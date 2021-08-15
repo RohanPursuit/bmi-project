@@ -27,5 +27,7 @@ module.exports = {
     calculateBMI,
     recommendWorkout,
     weightStatus,
-    reciept
+    reciept,
+    heightToMeters,
+    weightToKG
 }
