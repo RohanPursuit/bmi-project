@@ -83,7 +83,7 @@ describe("Pounds to Kg", () => {
     })
 })
 
-describe("BMI", () => {
+describe("BMI Calculator", () => {
     it("should return a number", () => {
         let actual = typeof calculateBMI(1.524, 54.431)
         let expected = 'number'
