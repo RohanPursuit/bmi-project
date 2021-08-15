@@ -2,7 +2,7 @@ const {
     calculateBMI,
     recommendWorkout,
     weightStatus,
-    reciept,
+    healthInfo,
     heightToMeters,
     weightToKG
 
@@ -22,11 +22,11 @@ describe("Feet to meters", () => {
         expect(actual).toBe(expected)
 
         actual = heightToMeters(6)
-        expected = 1.828
+        expected = 1.829
         expect(actual).toBe(expected)
         
         actual = heightToMeters(7)
-        expected = 2.133
+        expected = 2.134
         expect(actual).toBe(expected)
     })
 })
@@ -38,11 +38,11 @@ describe("Inches/cm to meters", () => {
         expect(actual).toBe(expected)
 
         actual = heightToMeters(72, "in")
-        expected = 1.828
+        expected = 1.829
         expect(actual).toBe(expected)
 
         actual = heightToMeters(84, "in")
-        expected = 2.133
+        expected = 2.134
         expect(actual).toBe(expected)
     })
 
@@ -52,11 +52,11 @@ describe("Inches/cm to meters", () => {
         expect(actual).toBe(expected)
 
         actual = heightToMeters(182.88, "cm")
-        expected = 1.828
+        expected = 1.829
         expect(actual).toBe(expected)
 
         actual = heightToMeters(213.36, "cm")
-        expected = 2.133
+        expected = 2.134
         expect(actual).toBe(expected)
     })
 })
@@ -208,9 +208,9 @@ describe("Weight Status", () => {
     })
 })
 
-describe("Personal Status", () => {
+describe("User Health Info", () => {
     it("should return a object with users BMI, weight status and workout recommendation", () => {
-        let actual = reciept(1.524, 54.431, "high")
+        let actual = healthInfo(1.524, 54.431, "high")
         let expected = {
             height: "5 feet",
             weight: "120 pounds",
