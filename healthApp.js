@@ -1,5 +1,8 @@
 /**
- * Returns the given `height` in meters. If no `key` is given return the value passed into `height`. If a `key` is given convert the `height` from the given `key` to meters.
+ * Returns the given `height` in meters. If no `key` is given return the value passed into `height`. If a `key` is given convert the `height` from the given `key` to meters. 
+ * formula ---> feet * 0.3048 = meters
+ * formula ---> cm * 100 = meters
+ * 
  * @param {number} height - A number representing the height of a person.
  * @param {string} key - A string representing a unit of measurement 
  * @returns {number} - A number representing height in meters
@@ -29,7 +32,10 @@ function weightToKG(weight, key){
  */
 
 function calculateBMI(height, weight){
-    if (!height || !weight){return !height ? "No height inputted" : "No weight inputted"}
+    if (!height || !weight){
+        return !height ? "No height inputted" : "No weight inputted"
+    }
+
  return 1*(weight/height**2).toFixed(1)
 }
 

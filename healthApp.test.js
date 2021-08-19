@@ -17,32 +17,32 @@ describe("Feet to meters", () => {
     })
 
     it("should convert Feet to meters", () => {
-        let actual = toMeters(5)
+        let actual = toMeters(5, 'ft')
         let expected = 1.524
         expect(actual).toBe(expected)
 
     })
 
     it("should dynamically convert Feet to meters", () => {
-        let actual = toMeters(6)
+        let actual = toMeters(6, 'ft')
         let expected = 1.829
         expect(actual).toBe(expected)
         
-        actual = toMeters(7)
+        actual = toMeters(7, 'ft')
         expected = 2.134
         expect(actual).toBe(expected)
     })
 })
 
 describe("Inches/cm to meters", () => {
-    it("should convert the given 'in' to meters", () => {
+    it("should convert 'in' to meters", () => {
         let actual = toMeters(60, "in")
         let expected = 1.524
         expect(actual).toBe(expected)
 
     })
 
-    it("should convert the given 'cm' to meters", () => {
+    it("should convert 'cm' to meters", () => {
         let actual = toMeters(152.4, "cm")
         let expected = 1.524
         expect(actual).toBe(expected)
@@ -76,15 +76,15 @@ describe("Pounds to Kg", () => {
     })
 
     it("should convert pounds to kg", () => {
-        let actual = weightToKG(100)
+        let actual = weightToKG(100, 'lb')
         let expected = 45.359
         expect(actual).toBe(expected)
         
-        actual = weightToKG(150)
+        actual = weightToKG(150, 'lb')
         expected = 68.039
         expect(actual).toBe(expected)
         
-        actual = weightToKG(200)
+        actual = weightToKG(200, 'lb')
         expected = 90.719
         expect(actual).toBe(expected)
     })
