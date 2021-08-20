@@ -21,7 +21,7 @@ function toMeters(height, key){
  */
 
 function weightToKG(weight, key){
-    return 54.431
+    return 0
 }
 
 /**
@@ -39,7 +39,13 @@ function calculateBMI(height, weight){
  return 1*(weight/height**2).toFixed(1)
 }
 
-calculateBMI(null, 1.4)
+//calculateBMI(null, 1.4)
+
+/**
+ * 
+ * @param {*} bmi 
+ * @returns 
+ */
 
 function recommendWorkout(bmi) {
 

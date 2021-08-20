@@ -128,13 +128,13 @@ describe("BMI Calculator", () => {
 })
 
 describe("Workout", () => {
-    it("shoud return a error message", () => {
+    it("should return an error message", () => {
         let actual = recommendWorkout()
         let expected = "No BMI found"
         expect(actual).toBe(expected)
     })
     
-    it("shoud return a error message", () => {
+    it("should return an error message", () => {
         let actual = recommendWorkout('error')
         let expected = "Invalid input"
         expect(actual).toBe(expected)
@@ -162,7 +162,7 @@ describe("Workout", () => {
 })
 
 describe("Weight Status", () => {
-    it("shoud return a error message", () => {
+    it("should return a error message", () => {
         let actual = recommendWorkout()
         let expected = "No BMI found"
         expect(actual).toBe(expected)
