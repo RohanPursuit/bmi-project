@@ -10,9 +10,12 @@
 
 
 function toMeters(height, key){
-    return 1.524
+if (!key) {
+    return 0
 }
-
+    let value = height / 3.2808
+        return Number(value.toFixed(3))
+}
 /**
  * Returns the given `weight` in kilograms. If no `key` is given return the value passed into `weight`. If a `key` is given convert the `weight` from the given `key` to kilograms.
  * @param {number} weight - A number representing the weight of a person.
