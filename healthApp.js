@@ -49,7 +49,7 @@ function calculateBMI(height, weight){
 
 function recommendWorkout(bmi) {
 
-    let arr = [];
+    let arr = [1];
  return `Workout 2 days a week`
 }
 
