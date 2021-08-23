@@ -13,8 +13,18 @@ function toMeters(height, key){
 if (!key) {
     return 0
 }
+if(key === 'in') {
+    let val = height * 0.0254 
+return Number(val)
+}
+ if (key === 'cm') {
+    let small = height / 100
+return Number(small)
+}
+if (key === 'ft') {
     let value = height / 3.2808
-        return Number(value.toFixed(3))
+return Number(value.toFixed(3))
+}
 }
 /**
  * Returns the given `weight` in kilograms. If no `key` is given return the value passed into `weight`. If a `key` is given convert the `weight` from the given `key` to kilograms.
