@@ -1,7 +1,8 @@
 /**
  * Returns the given `height` in meters. If no `key` is given return the value passed into `height`. If a `key` is given convert the `height` from the given `key` to meters. 
- * formula ---> feet * 0.3048 = meters
- * formula ---> cm * 100 = meters
+ * formula ---> feet / 3.2808 = meters
+ * formula ---> cm / 100 = meters
+ * formula ---> inches * 0.0254 = meters
  * 
  * @param {number} height - A number representing the height of a person.
  * @param {string} key - A string representing a unit of measurement 
@@ -10,9 +11,22 @@
 
 
 function toMeters(height, key){
-    return 1.524
+if (!height) {
+    return 0
 }
-
+if(key === 'in') {
+    let val = height * 0.0254 
+return Number(val.toFixed(3))
+}
+if (key === 'cm') {
+    let small = height / 100
+return Number(small.toFixed(3))
+}
+if (key === 'ft') {
+    let value = height / 3.2808
+return Number(value.toFixed(3))
+}
+}
 /**
  * Returns the given `weight` in kilograms. If no `key` is given return the value passed into `weight`. If a `key` is given convert the `weight` from the given `key` to kilograms.
  * @param {number} weight - A number representing the weight of a person.
