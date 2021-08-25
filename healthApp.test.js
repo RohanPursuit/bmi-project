@@ -11,7 +11,7 @@ const {
 
 describe("Feet to meters", () => {
     it("should return error if no number inputted", () => {
-        let actual = toMeters()
+        let actual = toMeters(null, 'in')
         let expected = 0
         expect(actual).toBe(expected)
     })
