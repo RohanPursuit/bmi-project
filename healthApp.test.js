@@ -78,15 +78,15 @@ describe("Pounds to Kg", () => {
     it("should convert pounds to kg", () => {
         let actual = weightToKG(100, 'lb')
         let expected = 45.359
-        expect(actual).toBe(expected)
+        expect(actual).toBeCloseTo(expected, 2)
         
         actual = weightToKG(150, 'lb')
         expected = 68.039
-        expect(actual).toBe(expected)
+        expect(actual).toBeBeCloseTo(expected, 2)
         
         actual = weightToKG(200, 'lb')
         expected = 90.719
-        expect(actual).toBe(expected)
+        expect(actual).toBeCloseTo(expected, 2)
     })
 })
 
