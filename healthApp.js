@@ -26,7 +26,7 @@ if (key === 'ft') {
     let value = height / 3.2808
 return Number(value.toFixed(3))
 }
-}
+} 
 /**
  * Returns the given `weight` in kilograms. If no `key` is given return the value passed into `weight`. If a `key` is given convert the `weight` from the given `key` to kilograms.
  * @param {number} weight - A number representing the weight of a person.
@@ -35,7 +35,13 @@ return Number(value.toFixed(3))
  */
 
 function weightToKG(weight, key){
+if (!weight) {
     return 0
+}
+if (key === 'lb') {
+    let heavy = weight / 2.2046
+        return Number(heavy.toFixed(3))
+    }
 }
 
 /**
@@ -46,11 +52,10 @@ function weightToKG(weight, key){
  */
 
 function calculateBMI(height, weight){
-    if (!height || !weight){
-        return !height ? "No height inputted" : "No weight inputted"
-    }
-
- return 1*(weight/height**2).toFixed(1)
+if (!height || !weight){
+    return !height ? "No height inputted" : "No weight inputted"
+}
+    return 1*(weight/height**2).toFixed(1)
 }
 
 //calculateBMI(null, 1.4)
