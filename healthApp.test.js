@@ -82,7 +82,7 @@ describe("Pounds to Kg", () => {
         
         actual = weightToKG(150, 'lb')
         expected = 68.039
-        expect(actual).toBeBeCloseTo(expected, 2)
+        expect(actual).toBeCloseTo(expected, 2)
         
         actual = weightToKG(200, 'lb')
         expected = 90.719
